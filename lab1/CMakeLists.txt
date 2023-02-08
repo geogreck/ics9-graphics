@@ -5,4 +5,4 @@ project("lab1")
 file(GLOB LAB_SOURCES *.cpp)
 
 add_executable(${PROJECT_NAME} ${LAB_SOURCES})
-target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL GLUT::GLUT)
+target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL GLUT::GLUT glfw)

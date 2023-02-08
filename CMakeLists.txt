@@ -12,6 +12,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -g -Wall -Wextra -pedantic -Wformat=2 -
 find_package(OpenGL REQUIRED)
 # find_file(GLUT REQUIRED)
 find_package(GLUT REQUIRED)
+find_package(glfw3 3.3 REQUIRED)
 
 
 message("FOUND OPENGL - ${OPENGL_FOUND}")
