@@ -13,6 +13,7 @@ find_package(OpenGL REQUIRED)
 # find_file(GLUT REQUIRED)
 find_package(GLUT REQUIRED)
 find_package(glfw3 3.3 REQUIRED)
+find_package(GLEW REQUIRED)
 
 
 message("FOUND OPENGL - ${OPENGL_FOUND}")
