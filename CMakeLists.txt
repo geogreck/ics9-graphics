@@ -20,3 +20,4 @@ message("FOUND OPENGL - ${OPENGL_FOUND}")
 message("FOUND GLUT - ${GLUT_FOUND}")
 
 add_subdirectory(lab1)
+add_subdirectory(lab2)

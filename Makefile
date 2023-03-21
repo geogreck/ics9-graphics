@@ -1,4 +1,4 @@
-.PHONY: build generate all clean lab1
+.PHONY: build generate all clean lab1 lab2
 
 all: build run
 
@@ -16,3 +16,6 @@ build:
 
 lab1:
 	./build/lab1/lab1
+
+lab2:
+	./build/lab2/lab2
