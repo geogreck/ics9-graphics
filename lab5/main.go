@@ -2,10 +2,10 @@ package main
 
 import (
 	"fmt"
+	"log"
 
 	"github.com/go-gl/gl/v2.1/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
-	"go.uber.org/zap"
 )
 
 type point struct {
@@ -29,8 +29,6 @@ var area = Area{
 }
 
 var (
-	logger *zap.Logger
-
 	window_width  = 1000
 	window_height = 1000
 )
@@ -258,21 +256,19 @@ func keyCallback(w *glfw.Window, key glfw.Key, scancode int, action glfw.Action,
 }
 
 func main() {
-	logger, _ = zap.NewDevelopment()
-
 	if err := glfw.Init(); err != nil {
-		logger.Fatal("failed to initialize glfw:", zap.Error(err))
+		log.Fatal("failed to initialize glfw:", err)
 	}
 
 	window, err := glfw.CreateWindow(window_width, window_height, "Lab 5", nil, nil)
 
 	if err != nil {
 		glfw.Terminate()
-		logger.Fatal("failed to create glfw window:", zap.Error(err))
+		log.Fatal("failed to create glfw window:", err)
 	}
 
 	if err := gl.Init(); err != nil {
-		logger.Fatal("failed to initialize gl:", zap.Error(err))
+		log.Fatal("failed to initialize gl:", err)
 	}
 
 	window.MakeContextCurrent()
