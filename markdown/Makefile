@@ -9,7 +9,7 @@ all: pdf
 pdf: $(pdf)
 
 $(pdf): %.pdf: %.md
-	pandoc -s --template ./pandoc.template --pdf-engine=latexmk \
+	pandoc -s --template ./pandoc.template --pdf-engine=xelatex \
 --pdf-engine-opt="-lualatex" $< -o $@
 
 create:
