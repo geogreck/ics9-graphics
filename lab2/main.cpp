@@ -22,7 +22,7 @@ using std::cos, std::sin;
 
 void key(GLFWwindow *window, int key, int scancode, int action, int mods)
 {
-    if (action == GLFW_PRESS)
+    if (action == GLFW_PRESS || action == GLFW_REPEAT)
     {
         if (key == GLFW_KEY_ESCAPE)
         {
@@ -128,8 +128,6 @@ void display(GLFWwindow *window)
         {0.f, 0.f, 1.f, -(1.f / z)},
         {0.f, 0.f, 0.f, 1.f}};
 
-    std::cout << -(1.f / x) << std::endl;
-
     GLfloat front_view[4][4] = {
         {1.f, 0.f, 0.f, 0.f},
         {0.f, 1.f, 0.f, 0.f},
@@ -209,7 +207,5 @@ int main(int argc, char **argv)
 
     glfwDestroyWindow(window);
     glfwTerminate();
-    return 0;
-
     return 0;
 }
