@@ -5,6 +5,7 @@ import (
 	_ "image/jpeg"
 	_ "image/png"
 	"log"
+	"runtime"
 
 	"github.com/disintegration/imaging"
 	"github.com/go-gl/gl/v2.1/gl"
@@ -139,6 +140,8 @@ func keyCallback(w *glfw.Window, key glfw.Key, scancode int, action glfw.Action,
 }
 
 func main() {
+	runtime.LockOSThread()
+
 	if err := glfw.Init(); err != nil {
 		log.Fatal("failed to initialize glfw:", err)
 	}
@@ -158,7 +161,7 @@ func main() {
 	}
 	glut.Init()
 
-	img, err := imaging.Open("water.bmp")
+	img, err := imaging.Open("1.bmp")
 	if err != nil {
 		log.Fatalf("failed to open image: %v", err)
 	}
